@@ -8,7 +8,7 @@ import Estoque.Estoque;
 import Estoque.Produto;
 
 
-
+/*Classe para testar o estoque*/
 public class TesteEstoque extends Estoque{
 	public static void main(String[] args)  {
 		
@@ -28,14 +28,14 @@ public class TesteEstoque extends Estoque{
 		Estoque estoque  = new Estoque(); 
 		
 		
-		int calca [] = {2};
+		int calca [] = {2,5};
 		int camiseta [] = { 10, 30, 5, 5 };
-		int camisa [] =  {10, 5,1,2,3,2};
-		int bermuda [] = {1};
+		int camisa [] =  {20, 5,1,2,3,2};
+		int bermuda [] = {5 };
 		int tenis [] = {3};
+		/*na posição  0 terá que retornar 40*/
 		
-		
-		estoque.setValor(90);
+	
 		estoque.setCamiseta(camiseta);
 		estoque.setValor(20);
 		estoque.setCamisa(camisa);
@@ -44,53 +44,46 @@ public class TesteEstoque extends Estoque{
 		estoque.setValor(50);
 		estoque.setTenis(tenis);
 		estoque.setValor(300);
+		estoque.setCalca(calca);
+		estoque.setValor(20.00);
 		
+		estoque.getProdutos().add(estoque);
+		
+		
+	
 		
 
-		 Estoque[] arrayEstoques = new Estoque[1];
+		Estoque[] arrayEstoques = new Estoque[1];
 		 
 		 
 			
 		arrayEstoques[0] =estoque;
+		for (int pos =0; pos < arrayEstoques.length; pos++ ) {
+			System.out.println("Quantidade de camisa: "+camisa[pos] + " Valor total das camisas: "+estoque.ValorTotalCamisa());
+			System.out.println("Quantidade de camiseta: "+camiseta[pos]+ " Valor total das camisetas: "+estoque.ValorTotalCamiseta());
+			System.out.println("Quantidade de calça: "+calca[pos] + " Valor total das calca: " +estoque.ValorTotalCalca());
+			System.out.println("Quanidade de bermuda:"+bermuda[pos] + " Valor total das bermuda: " +estoque.ValorTotalBermuda());
+			System.out.println("Quantidade de tenis: " +tenis[pos] + " Valor total dos tenis " +estoque.ValorTotalTenis());
+			System.out.println("Quantidade total em estoque: " +estoque.getQuantidade() + " Valor em estoque: R$ "+ estoque.getCalculoProduto());
+			System.out.println("Total:  "+estoque.getQuantidade()
+			);
+			
+			System.out.println("Espaço livre: " + estoque.getCapacidadeLivreEstoque() );
+			System.out.println("Espaço Total permitido: " + estoque.getCapacidadeEstoque() );
+		
+		}
+		
+		
+	
 		
 		
 		
-		
-		
-			for(int pos =0;  pos < arrayEstoques.length; pos++) {
-				
-				
-				
-				System.out.println("Valor parado em estoque: " + arrayEstoques[pos].getCalculoProduto());
-				System.out.println("Capacidade de estoque Maxima: " + arrayEstoques[pos].getCapacidadeEstoque());
-				System.out.println("Espaço livre de estoque: " + arrayEstoques[pos].getCapacidadeLivreEstoque());
-
-				System.out.println("Valor total produto: " + arrayEstoques[pos].getValorTotalProduto());
-
-				
-				
-				
-				for (Estoque estoque1 : arrayEstoques) {
-					for(int poscalca =0; poscalca < estoque1.getQuantidadeTotalProduto(); poscalca ++) {
-						System.out.println("Quantidade adicionada ao estoque: " +(poscalca) + " capacidade do estoque =" +estoque1.getCapacidadeLivreEstoque());
-						for(int poscamiseta =0; poscamiseta < estoque1.getCamiseta().length; poscamiseta ++) {
-							System.out.println("Quantidade adicionada ao estoque: " +(poscamiseta) + " capacidade do estoque =" +estoque1.getCapacidadeLivreEstoque());
-							for(int poscamisa =0; poscamisa < estoque1.getCamisa().length; poscamisa ++) {	
-								System.out.println("Quantidade adicionada ao estoque: " +(poscamisa) + " capacidade do estoque =" +estoque1.getCapacidadeLivreEstoque());	
-								for(int posbermuda  =0; posbermuda < estoque1.getBermuda().length; posbermuda ++) {
-									System.out.println("Quantidade adicionada ao estoque: " +(posbermuda) + " capacidade do estoque =" +estoque1.getCapacidadeLivreEstoque());
-									for(int postenis   =0; postenis < estoque1.getBermuda().length; postenis ++) {
-										System.out.println("Quantidade adicionada ao estoque: " +(postenis) + " capacidade do estoque =" +estoque1.getCapacidadeLivreEstoque());
-							}}}}}
-							
-							
-							
-							
-						}
+	
 					
 				}
 				
 				
+
 		
 
 			
@@ -101,7 +94,7 @@ public class TesteEstoque extends Estoque{
 		
 		
 		
-	}
+	
 
 	
 

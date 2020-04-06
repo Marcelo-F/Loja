@@ -5,11 +5,11 @@ import Estoque.Estoque;
 
 public class Produto {
 
-	private int camisa[];
-	private int calça[];
-	private int camiseta[];
-	private int bermuda[];
-	private int tenis[];
+	private int[] camisa;
+	private int[] calca ;
+	private int []camiseta;
+	private int []bermuda;
+	private int []tenis;
 
 	private String marca;
 	private String cor;
@@ -19,42 +19,29 @@ public class Produto {
 	private double ValorRevendaProduto;
 
 	public int[] getCamisa() {
+	
 
-		for (int pos = 0; pos < getCamisa().length; pos++) {
-			int somaCamisa = +camisa[pos];
-
-		}
-
-		return getCamisa();
+		return camisa;
 	}
 
 	public void setCamisa(int[] camisa) {
 		this.camisa = camisa;
 	}
 
-	public int[] getCalça() {
-
-		for (int pos = 0; pos < getCamisa().length; pos++) {
-
-			int somaCalca = +calça[pos];
-
-		}
-		return getCalça();
+	public int[] getCalca() {
+	
+		return calca;
 
 	}
 
-	public void setCalça(int[] calça) {
-		this.calça = calça;
+	public void setCalca(int[] calca) {
+		this.calca = calca;
 	}
 
 	public int[] getCamiseta() {
 
-		for (int pos = 0; pos < getCamiseta().length; pos++) {
-
-			int somaCamiseta = +camiseta[pos];
-		}
-
-		return getCamiseta();
+	
+		return camiseta;
 	}
 
 	public void setCamiseta(int[] camiseta) {
@@ -63,12 +50,8 @@ public class Produto {
 
 	public int[] getBermuda() {
 
-		for (int pos = 0; pos < getBermuda().length; pos++) {
-
-			int somaBermuda = +bermuda[pos];
-
-		}
-		return getBermuda();
+	
+		return bermuda;
 	}
 
 	public void setBermuda(int[] bermuda) {
@@ -78,11 +61,7 @@ public class Produto {
 	
 	public int[] getTenis() {
 
-		for (int pos = 0; pos < getTenis().length; pos++) {
-
-			int somaTenis = +tenis[pos];
-
-		}
+	
 
 		return tenis;
 	}
@@ -106,11 +85,181 @@ public class Produto {
 	public void setTamanho(String tamanho) {
 		this.tamanho = tamanho;
 	}
+	
+	
+	
+	
+	
+	/*Returna o total de quantidade  cada item*/
+	
+	public int TotalCamisa() {
+		
+		
+		int somaCamisa =0;
+		for (int pos = 0; pos < camisa.length; pos++) {
+			somaCamisa += camisa[pos];
 
-	public int getQuantidade() {
+		}
+		return somaCamisa;
+		
+		
+		
+	}
+		
+		
+	public int TotalCalca() {	
+		int somaCalca = 0;
+		for (int posCalca = 0; posCalca < calca.length; posCalca++) {
+
+			 somaCalca +=calca[posCalca];
+
+		}
+	
+		return somaCalca;
+	}
+	
+	public int TotalCamiseta() {
+		
+		int somaCamiseta =0; 
+		
+		
+		for (int pos = 0; pos < camiseta.length; pos++) {
+
+	 somaCamiseta +=camiseta[pos];
+	}
+
+		return somaCamiseta;
+		
+		
+		
+	}
+	
+	
+	public int TotalBermuda() {
+		
+		int somaBermuda =0;
+		for (int pos = 0; pos < bermuda.length; pos++) {
+
+		 somaBermuda = +bermuda[pos];
+
+	}
+		
+		return somaBermuda;
+		
+	}
+		
+	public int TotalTenis () {
+		
+		int somaTenis = 0;
+		for (int pos = 0; pos < tenis.length; pos++) {
+
+		 somaTenis = +tenis[pos];
+
+	}
+		return somaTenis; 
+		
+	}
+		
 		
 	
-		return quantidade;
+	
+	/*valor total de cada item em estoque*/
+	
+	
+	public double ValorTotalCamisa () {
+		double ValorTotalCamisa = 0.0;
+		for(int pos =0; pos < camisa.length; pos ++) {
+			
+			ValorTotalCamisa = valor*camisa.length; 
+		}
+			
+			
+		
+		
+		
+		return ValorTotalCamisa;
+		
+		
+		
+		
+	} 
+	
+	public double ValorTotalCamiseta() {
+		double ValorTotalCamiseta =0.0;
+		
+			for(int pos =0; pos < camiseta.length; pos ++) {
+			
+			ValorTotalCamiseta= valor*camiseta.length; 
+		}
+			
+		
+		
+		return ValorTotalCamiseta;
+		
+	} 
+	
+	public double ValorTotalCalca() {
+		
+		double ValorTotalCalca = 0.0;
+		
+	for(int pos =0; pos < calca.length; pos ++) {
+			
+			ValorTotalCalca= valor*calca.length; 
+		}
+			
+		
+		
+		
+		
+		return ValorTotalCalca;
+		
+	} 
+	public double ValorTotalBermuda() {
+		double ValorTotalBermuda = 0.0;
+		
+		
+			for(int pos =0; pos < bermuda.length; pos ++) {
+			
+				ValorTotalBermuda= valor*bermuda.length; 
+		}
+			
+		
+		
+		
+		return ValorTotalBermuda;
+		
+		
+		
+	} 
+	public double ValorTotalTenis() {
+		double ValorTotalTenis = 0.0;
+		
+		
+		for(int pos =0; pos < tenis.length; pos ++) {
+			
+			ValorTotalTenis= valor*tenis.length; 
+	}
+		
+		
+		return ValorTotalTenis;
+		
+		
+		
+	} 
+	
+	
+	
+
+	/*Return o total de produtos  em estoque*/ //EM ANDAMENTO 
+	public int getQuantidade() {
+		int Somatotal = 0;
+		
+	
+		Somatotal = (TotalCamiseta() +TotalBermuda() +TotalCalca()+TotalCamisa()+TotalTenis());
+	
+	
+	
+		return Somatotal ;
 	}
 
 	public void setQuantidade(int quantidade) {
@@ -135,11 +284,11 @@ public class Produto {
 
 	public double getCalculoProduto() {
 
-		return quantidade * valor;
+		return getQuantidade()* valor;
 
 	}
 
-	public double getValorRevendaProduto() {
+	public double getValorRevendaProduto() { 
 
 		return ValorRevendaProduto = +this.getValor();
 
@@ -149,4 +298,15 @@ public class Produto {
 		ValorRevendaProduto = valorRevendaProduto;
 	}
 
+	
+	
+
+	
+	
+	
+	
+
+	
+	
+	
 }

@@ -1,6 +1,7 @@
 package Funcionario;
 import Funcionario.OperadorCaixa;
 import Funcionario.Vendedor;
+
 import CadastroPessoa.CadastroPessoa;
 
 public class Funcionario extends CadastroPessoa {
@@ -11,6 +12,8 @@ public class Funcionario extends CadastroPessoa {
 	private float Salario;
 	private String dataDemissao;
 	private String dataAdemissao;
+	private String admin; 
+	private String  senha; 
 	
 	
 	
@@ -49,6 +52,18 @@ public class Funcionario extends CadastroPessoa {
 	}
 	public void setDataAdemissao(String dataAdemissao) {
 		this.dataAdemissao = dataAdemissao;
+	}
+	public String getAdmin() {
+		return admin;
+	}
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	} 
 	
 	

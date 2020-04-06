@@ -7,7 +7,7 @@ public class Vendedor  extends Funcionario  {
 	public double getComissao() {
 		
 		
-		return comissao *0.05;
+		return comissao += 1.00;
 	}
 
 	public void setComissao(double comissao) {
@@ -18,7 +18,7 @@ public class Vendedor  extends Funcionario  {
 	}
 
 	public double getPremioMeta() {
-		return premioMeta +=200;
+		return premioMeta;
 	}
 
 	public void setPremioMeta(double premioMeta) {
@@ -33,6 +33,11 @@ public float getSalario() {
 	// TODO Auto-generated method stub
 	return (float) (comissao += 1.300);
 }
+
+
+
+
+
 	
 
 }

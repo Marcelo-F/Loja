@@ -2,13 +2,15 @@ package CadastroPessoa;
 import Cliente.Cliente;
 import Funcionario.FuncionarioFisica;
 
-public class PessoaFisica extends Cliente {
+public class PessoaFisica extends Cliente{
 
 	
 	
 	
 	private  String rg; 
 	private String cpf;
+	
+	
 	public String getRg() {
 		return rg;
 	}

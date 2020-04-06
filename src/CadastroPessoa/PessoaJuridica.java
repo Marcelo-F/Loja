@@ -1,6 +1,7 @@
 package CadastroPessoa;
 
 import Cliente.Cliente;
+import CadastroPessoa.CadastroPessoa;
 
 public class PessoaJuridica extends Cliente{
 	
@@ -12,7 +13,7 @@ public class PessoaJuridica extends Cliente{
 
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
-	} 
+	}
 
 	
 	
